@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <default revision="krogoth" sync-j="1"/>
+
+  <remote fetch="git://git.yoctoproject.org"                        name="yocto-layer"/>
+  <remote fetch="https://github.com/Freescale"                      name="fsl-layer"/>
+  <remote fetch="git://git.openembedded.org"                        name="oe-layer"/>
+  <remote fetch="git://github.com/cleitonbueno"                     name="b2open-layer"/>
+  <remote fetch="git://github.com/sysmocom"                         name="voip-layer"/>
+
+  <project remote="yocto-layer"     revision="4515fc952963e233d5f24bb319028e8c68ee7622" name="poky"                 path="poky-krogoth"/>
+  <project remote="fsl-layer"       revision="e2254e7b2ded0c2b66b1226f879b3a6d52037b2d" name="meta-fsl-arm"         path="poky-krogoth/meta-fsl-arm"/>
+  <project remote="fsl-layer"       revision="2c28e636ec15c2cfd49bc9cebe0bbbcfde95bc7b" name="meta-fsl-arm-extra"   path="poky-krogoth/meta-fsl-arm-extra"/>
+  <project remote="oe-layer"        revision="55c8a76da5dc099a7bc3838495c672140cedb78e" name="meta-openembedded"    path="poky-krogoth/meta-openembedded"/>
+  <project remote="voip-layer"      revision="3b2076a5563a27e114b02a1e41cf4f62330e9575" name="meta-telephony"       path="poky-krogoth/meta-telephony"/>
+  <project remote="b2open-layer"    revision="krogoth"                                  name="meta-b2open"          path="poky-krogoth/meta-b2open">
+    <copyfile dest="setup-environment" src="meta-voip/setup-environment"/>
+  </project>
+
+</manifest>
