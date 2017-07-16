@@ -97,8 +97,7 @@ The end result of the build will be in:
 Note that your uSD will have to be at least 2GB large. Pop in your micro SD card to your card writer, and find out the location of
 the block device by running `dmesg`. Now you can run the script as following:
 
-    $ sudo cd "your directory build"/tmp/deploy/images/colibri-imx6 ; gzip -d ippbx-image-colibri-imx6.sdcard.gz
-    $ sudo dd if="your directory build"/tmp/deploy/images/colibri-imx6/ippbx-image-colibri-imx6.sdcard.gz of=/dev/sdX bs=1M
+    $ sudo gunzip -c ippbx-image-colibri-imx6.sdcard.gz | sudo dd of=/dev/sdX bs=1M
 
 If no errors occur, done!
 
